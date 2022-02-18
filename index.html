@@ -6,27 +6,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IndexedDB</title>
+    <!-- Compressed CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
 </head>
 
 <body>
+    <div class="title-bar" style="background-color: #19466061;margin-bottom: 20px;">
+        <div class="title-bar-left">
+          <button class="menu-icon" type="button"></button>
+          <span class="title-bar-title">Formulario</span>
+        </div>
+        <div class="title-bar-right">
+          <button class="menu-icon" type="button"></button>
+        </div>
+    </div>
+    
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+          <div class="cell small-6">
+            <div class="card" style="width: 100%;">
+                <div class="card-divider">
+                  Formulario 
+                </div>
+                <div class="card-section">
+                    <div>
+                        <div>
+                            <label>Nombre</label>
+                            <input type="text" placeholder="Ingresa tu nombre" id="name">
+                        </div>
+                        <div>
+                            <label>Documento de identidad (DNI)</label>
+                            <input type="number" placeholder="ej: 129929293" id="dni">
+                        </div>
+                        <div>
+                            <label>Fecha Nacimiento</label>
+                            <input type="date" placeholder="Birth Date" id="birthDate">
+                        </div>
+                        <div>
+                            <button class="button small" type="submit" id="buttonInsert">
+                                Guardar
+                            </button>
+                        </div>
+                
+                    </div>
+                </div>
+            </div>
+
+          </div>
+          <div class="cell small-6">
+              <h4>Lista</h4>
+              <hr>
+              <table>
+                  <tr>
+                      <td> 
+                        Datos generales
+                      </td>
+                      <td>
+                        <button class="button small" type="submit" id="buttonInsert">
+                            Eliminar
+                        </button>
+
+                      </td>
+                     
+                  </tr>
+
+              </table>
+          <span style="font-style: italic;">No hay registros para mostrar...</span>
+
+          </div>
+          
+        </div>
+    </div>
+
+
     <div>
         <button id="buttonShow">Show Users</button>
     </div>
-    <form>
-        <div>
-            <input type="name" placeholder="Name" id="name">
-        </div>
-        <div>
-            <input type="dni" placeholder="DNI" id="dni">
-        </div>
-        <div>
-            <input type="date" placeholder="Birth Date" id="birthDate">
-        </div>
-        <div>
-            <button type="submit" id="buttonInsert">Add</button>
-        </div>
-
-    </form>
+   
     <div>
         <input id="deleteDniUser" placeholder="Dni Delete User">
         <button id="buttonDeleteUser">Delete</button>
@@ -38,6 +94,9 @@
     </div>
 
 </body>
+<script>
+  //  $(document).foundation();
+  </script>
 <script src="index.js"></script>
 
 </html>
