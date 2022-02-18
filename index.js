@@ -23,9 +23,9 @@ document.getElementById("buttonView").onclick = () => {
 
 function addElement(nameData, dniData, brithDateData) {
   const listItem = document.createElement("li");
-  const name = document.createElement("h3");
-  const dni = document.createElement("h3");
-  const birthDate = document.createElement("h3");
+  const name = document.createElement("h4");
+  const dni = document.createElement("h4");
+  const birthDate = document.createElement("h4");
 
   listItem.appendChild(name);
   listItem.appendChild(dni);
@@ -55,11 +55,13 @@ function addElement(nameData, dniData, brithDateData) {
   };
   deleteBtn.textContent = "Eliminar";
   deleteBtn.className = "button small";
+  deleteBtn.style="cursor: url('https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png'), auto;";
   listItem.appendChild(deleteBtn);
 
   const updateButton = document.createElement("button");
   updateButton.textContent = "Actualizar";
   updateButton.className = "button small";
+  updateButton.style="cursor: url('https://img.icons8.com/material-outlined/24/000000/approve-and-update.png'), auto;";
   updateButton.onclick = () => {
     const updateName = document.createElement("input");
     updateName.type = "text";
