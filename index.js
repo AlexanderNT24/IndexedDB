@@ -55,13 +55,13 @@ function addElement(nameData, dniData, brithDateData) {
   };
   deleteBtn.textContent = "Eliminar";
   deleteBtn.className = "button small";
-  deleteBtn.style="cursor: url('https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png'), auto;";
+  deleteBtn.style = "cursor: url('https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png'), auto;";
   listItem.appendChild(deleteBtn);
 
   const updateButton = document.createElement("button");
   updateButton.textContent = "Actualizar";
   updateButton.className = "button small";
-  updateButton.style="cursor: url('https://img.icons8.com/material-outlined/24/000000/approve-and-update.png'), auto;";
+  updateButton.style = "cursor: url('https://img.icons8.com/material-outlined/24/000000/approve-and-update.png'), auto;";
   updateButton.onclick = () => {
     const updateName = document.createElement("input");
     updateName.type = "text";
@@ -149,7 +149,7 @@ const consult = () => {
   const coleccionObjetos = trasaccion.objectStore("users");
   const conexion = coleccionObjetos.openCursor();
 
-  var boolCursor = false;
+  let boolCursor = false;
   conexion.onsuccess = (e) => {
     const cursor = e.target.result;
     if (cursor) {

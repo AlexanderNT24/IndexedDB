@@ -43,7 +43,9 @@
                             <input type="date" placeholder="Birth Date" id="birthDate">
                         </div>
                         <div>
-                            <button class="button small" type="submit" id="buttonInsert">
+                            <button style="background-color: #65d1a9;" class="button small" 
+                            
+                            type="submit" id="buttonInsert" onclick="insertPeople()">
                                 Guardar
                             </button>
                         </div>
@@ -54,26 +56,19 @@
 
           </div>
           <div class="cell small-6">
-              <h4>Lista
-                <label>Documento de identidad (DNI)</label>
-                <input id="searchDniUser" type="number" placeholder="Ej:234232">
-                <button class="button small"  id="buttonSearchUser">Buscar</button>
-                <button class="button small"  id="buttonView">Mostrar Todo</button>
-            </h4>
-              <hr>
-              <table>
-                  <tr id="data">
-                      <td> 
-                        Datos generales
-                      </td>
-                      <td>
-                          
-                      </td>
-                     
-                  </tr>
-
-              </table>
-          <span id="noElementsSpan" style="font-style: italic;">No hay registros para mostrar...</span>
+            <div>
+              <h4>Lista</h4>
+              <label>Documento de identidad (DNI)</label>
+              <input onkeyup="searchData()" id="searchDniUser" type="number" placeholder="Ej:234232">
+            </div>
+            <hr>
+            <table id="data">
+              <tr>
+                <td> No hay datos..</td>
+              </tr>
+             
+            </table>
+          
 
           </div>
           
@@ -85,6 +80,7 @@
 <script>
   //  $(document).foundation();
   </script>
-<script src="index.js"></script>
+<!-- <script src="index.js"></script> -->
+<script src="main.js"></script>
 
 </html>
