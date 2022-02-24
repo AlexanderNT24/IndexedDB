@@ -107,7 +107,7 @@ function insertData(data) {
 function deleteData(id, dniData) {
   const trasaccion = db.transaction(["users"], "readwrite");
   const coleccionObjetos = trasaccion.objectStore("users");
-  console.log("dni:"+dniData);
+  dniData=String(dniData)
   const conexion = coleccionObjetos.delete(dniData);
 
   conexion.onsuccess = () => {
