@@ -2,10 +2,25 @@
 let peoples = [];
 let db;
 
-function initPage() {  
+function initPage() {
   initDataBase();
   refreshForm();
+}
 
+function validateInputs() {
+  let boolean=true;
+  if (document.getElementById("name").value == "") {
+    document.getElementById("name").style = "border-color: red";
+    boolean=false;
+  } else {
+    document.getElementById("name").style = "border-color:";
+  }
+  if (document.getElementById("dni").value == "") {
+    document.getElementById("dni").style = "border-color: red";
+    boolean=false;
+  } else document.getElementById("dni").style = "border-color:";
+
+  return boolean;
 }
 
 function refreshForm() {
@@ -37,15 +52,18 @@ function insertPeopleFromDb(cursor) {
 }
 
 function insertPeople() {
-  const newPerson = {
-    name: getValueDOMById("name"),
-    dni: getValueDOMById("dni"),
-    birthDate: getValueDOMById("birthDate"),
-  };
-  peoples.push(newPerson);
-  insertData(newPerson);
-  refreshForm();
-  insertAllDataTable(peoples);
+  if (validateInputs()) {
+    console.log(validateInputs());
+    const newPerson = {
+      name: getValueDOMById("name"),
+      dni: getValueDOMById("dni"),
+      birthDate: getValueDOMById("birthDate"),
+    };
+    peoples.push(newPerson);
+    insertData(newPerson);
+    refreshForm();
+    insertAllDataTable(peoples);
+  }
 }
 
 function searchData() {
@@ -107,12 +125,12 @@ function insertData(data) {
 function deleteData(id, dniData) {
   const trasaccion = db.transaction(["users"], "readwrite");
   const coleccionObjetos = trasaccion.objectStore("users");
-  dniData=String(dniData)
+  dniData = String(dniData);
   const conexion = coleccionObjetos.delete(dniData);
 
   conexion.onsuccess = () => {
     peoples.splice(id, 1);
-    console.log(peoples)
+    console.log(peoples);
     insertAllDataTable(peoples);
   };
 }
